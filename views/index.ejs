@@ -62,6 +62,13 @@
 			  fill: none;
 			  stroke: steelblue;
 			}
+			
+			.cent {
+			  position:absolute;
+			  top:50%;
+			  margin-top:200px; /* this is half the height of your div*/  
+			 
+			}
 
 			
 		</style>
@@ -92,7 +99,7 @@
 					
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-						<li><a href="#about" data-toggle="tab">About</a></li>
+						<li><a href="#about" data-toggle="tab">API</a></li>
 					</ul>
 				
 				</div>
@@ -104,9 +111,41 @@
 			<div class="tab-pane fade in active" id="home">
 
 				<div class="container">
-					
-				
-						<div id="TopicPanel" class="row visible">
+						
+						<div id ="Start" class="row visible">
+							<div  class="col-lg-8 col-md-8 col-sm-8 col-md-offset-2 "> 
+								
+								<div class="panel panel-success">
+									<div class="panel-heading ">
+										<h3 class="panel-title">
+											About this Project
+										</h3>
+										
+										<span class="pull-right"><button id="Run" class="btn btn-default" type="button"> RUN </button></span>
+									</div>
+									<div class="panel-body" style="height:400px;overflow:auto">
+										
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div id="TopicPanel" class="row hidden">
+						
+							<div class="col-lg-12 col-md-12 col-sm-12 ">
+								<div class="panel panel-success">
+									<div class="panel-heading ">
+										<h3 class="panel-title">
+											Trend</h3>
+										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+									</div>
+									<div class="panel-body">
+										<div id="containerFrontPage" ></div>
+									</div>
+								</div>
+							</div>
 
 							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div class="panel panel-success">
@@ -117,70 +156,9 @@
 										
 										<span class="pull-right panel-collapsed clickable "><i class="glyphicon glyphicon-minus"></i></span>
 									</div>
-									<div class="panel-body" style="overflow:auto">
-										<div class="table-responsive">
-											<table class="table table-hover" width="100%">
-									
-											<tr>
-													<td width="20%"> <font color="green">Cell-11</font></td>
-													<td width="20%"> <font color="green">Cell-12</font></td>
-													<td width="20%"> <font color="green">Cell-13</font></td>
-													<td width="20%"> <font color="green">Cell-14</font></td>
-													<td width="20%"> <font color="green">Cell-15</font></td>
-											
-											</tr>
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-21</font></td>
-													<td width="20%"> <font color="green">Cell-22</font></td>
-													<td width="20%"> <font color="green">Cell-23</font></td>
-													<td width="20%"> <font color="green">Cell-24</font></td>
-													<td width="20%"> <font color="green">Cell-25</font></td>
-											
-											</tr>
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-31</font></td>
-													<td width="20%"> <font color="green">Cell-32</font></td>
-													<td width="20%"> <font color="green">Cell-33</font></td>
-													<td width="20%"> <font color="green">Cell-34</font></td>
-													<td width="20%"> <font color="green">Cell-35</font></td>
-											
-											</tr>
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-41</font></td>
-													<td width="20%"> <font color="green">Cell-42</font></td>
-													<td width="20%"> <font color="green">Cell-43</font></td>
-													<td width="20%"> <font color="green">Cell-44</font></td>
-													<td width="20%"> <font color="green">Cell-45</font></td>
-											
-											</tr>
-											
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-51</font></td>
-													<td width="20%"> <font color="green">Cell-52</font></td>
-													<td width="20%"> <font color="green">Cell-53</font></td>
-													<td width="20%"> <font color="green">Cell-54</font></td>
-													<td width="20%"> <font color="green">Cell-55</font></td>
-											
-											</tr>
-											
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-61</font></td>
-													<td width="20%"> <font color="green">Cell-62</font></td>
-													<td width="20%"> <font color="green">Cell-63</font></td>
-													<td width="20%"> <font color="green">Cell-64</font></td>
-													<td width="20%"> <font color="green">Cell-65</font></td>
-											
-											</tr>
-
-											</table>
-											
-										</div>
-										<span class="pull-right clickable"><button class=" btn btn-success glyphicon glyphicon-refresh"></button></span>
+									<div id="Topic-1" class="panel-body" style="overflow:auto">
+										
+										
 									</div>
 								</div>
 							</div>
@@ -194,70 +172,8 @@
 										</h3>
 										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
 									</div>
-									<div class="panel-body" style="overflow:auto">
-										<div class="table-responsive">
-											<table class="table table-hover" width="100%">
-									
-											<tr>
-													<td width="20%"> <font color="green">Cell-11</font></td>
-													<td width="20%"> <font color="green">Cell-12</font></td>
-													<td width="20%"> <font color="green">Cell-13</font></td>
-													<td width="20%"> <font color="green">Cell-14</font></td>
-													<td width="20%"> <font color="green">Cell-15</font></td>
-											
-											</tr>
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-21</font></td>
-													<td width="20%"> <font color="green">Cell-22</font></td>
-													<td width="20%"> <font color="green">Cell-23</font></td>
-													<td width="20%"> <font color="green">Cell-24</font></td>
-													<td width="20%"> <font color="green">Cell-25</font></td>
-											
-											</tr>
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-31</font></td>
-													<td width="20%"> <font color="green">Cell-32</font></td>
-													<td width="20%"> <font color="green">Cell-33</font></td>
-													<td width="20%"> <font color="green">Cell-34</font></td>
-													<td width="20%"> <font color="green">Cell-35</font></td>
-											
-											</tr>
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-41</font></td>
-													<td width="20%"> <font color="green">Cell-42</font></td>
-													<td width="20%"> <font color="green">Cell-43</font></td>
-													<td width="20%"> <font color="green">Cell-44</font></td>
-													<td width="20%"> <font color="green">Cell-45</font></td>
-											
-											</tr>
-											
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-51</font></td>
-													<td width="20%"> <font color="green">Cell-52</font></td>
-													<td width="20%"> <font color="green">Cell-53</font></td>
-													<td width="20%"> <font color="green">Cell-54</font></td>
-													<td width="20%"> <font color="green">Cell-55</font></td>
-											
-											</tr>
-											
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-61</font></td>
-													<td width="20%"> <font color="green">Cell-62</font></td>
-													<td width="20%"> <font color="green">Cell-63</font></td>
-													<td width="20%"> <font color="green">Cell-64</font></td>
-													<td width="20%"> <font color="green">Cell-65</font></td>
-											
-											</tr>
-
-											</table>
-											
-										</div>
-										<span class="pull-right clickable"><button class=" btn btn-success glyphicon glyphicon-refresh"></button></span>
+									<div id="Topic-2" class="panel-body" style="overflow:auto">
+										
 									</div>
 								
 								</div>
@@ -270,8 +186,8 @@
 											Topic-3</h3>
 										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
 									</div>
-									<div class="panel-body">
-										Panel content 
+									<div id="Topic-3" class="panel-body">
+										
 										
 									</div>
 								</div>
@@ -284,8 +200,8 @@
 											Topic-4</h3>
 										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
 									</div>
-									<div class="panel-body">
-										Panel content 
+									<div id="Topic-4" class="panel-body">
+										
 									</div>
 								</div>
 							</div>
@@ -298,8 +214,8 @@
 											Topic-5</h3>
 										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
 									</div>
-									<div class="panel-body">
-										Panel content 
+									<div id="Topic-5" class="panel-body">
+										 
 									</div>
 								</div>
 							</div>
@@ -312,8 +228,8 @@
 											Topic-6</h3>
 										<span class="pull-right clickable "><i class="glyphicon glyphicon-minus"></i></span>
 									</div>
-									<div class="panel-body">
-										Panel content 
+									<div id="Topic-6" class="panel-body">
+										 
 									</div>
 								</div>
 							</div>
@@ -325,8 +241,8 @@
 											Topic-7</h3>
 										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
 									</div>
-									<div class="panel-body">
-										Panel content 
+									<div id="Topic-7" class="panel-body">
+										 
 									</div>
 								</div>
 							</div>
@@ -339,8 +255,8 @@
 											Topic-8</h3>
 										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
 									</div>
-									<div class="panel-body">
-										Panel content 
+									<div id="Topic-8" class="panel-body">
+										 
 									</div>
 								</div>
 							</div>
@@ -353,8 +269,8 @@
 											Topic-9</h3>
 										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
 									</div>
-									<div class="panel-body">
-										Panel content 
+									<div id="Topic-9" class="panel-body">
+										 
 									</div>
 								</div>
 							</div>
@@ -367,8 +283,8 @@
 											Topic-10</h3>
 										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
 									</div>
-									<div class="panel-body">
-										Panel content 
+									<div id="Topic-10" class="panel-body">
+										 
 									</div>
 								</div>
 							</div>
@@ -379,76 +295,13 @@
 							<!--<button type="button" class="btn btn-default btn-md back" >Back</button> -->
 							<div class="col-lg-4 col-md-4 col-sm-4">
 								<div class="panel panel-success">
-									<div class="panel-heading">
-										<h3 class="panel-title">
-											Topic-1
-										</h3>
+									<div id="PanelHeading" class="panel-heading">
 										
-										<span class="pull-right panel-collapsed clickable "><i class="glyphicon glyphicon-minus"></i></span>
+										
+										
 									</div>
-									<div class="panel-body" style="overflow:auto">
-										<div class="table-responsive">
-											<table class="table table-hover" width="100%">
-									
-											<tr>
-													<td width="20%"> <font color="green">Cell-11</font></td>
-													<td width="20%"> <font color="green">Cell-12</font></td>
-													<td width="20%"> <font color="green">Cell-13</font></td>
-													<td width="20%"> <font color="green">Cell-14</font></td>
-													<td width="20%"> <font color="green">Cell-15</font></td>
-											
-											</tr>
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-21</font></td>
-													<td width="20%"> <font color="green">Cell-22</font></td>
-													<td width="20%"> <font color="green">Cell-23</font></td>
-													<td width="20%"> <font color="green">Cell-24</font></td>
-													<td width="20%"> <font color="green">Cell-25</font></td>
-											
-											</tr>
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-31</font></td>
-													<td width="20%"> <font color="green">Cell-32</font></td>
-													<td width="20%"> <font color="green">Cell-33</font></td>
-													<td width="20%"> <font color="green">Cell-34</font></td>
-													<td width="20%"> <font color="green">Cell-35</font></td>
-											
-											</tr>
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-41</font></td>
-													<td width="20%"> <font color="green">Cell-42</font></td>
-													<td width="20%"> <font color="green">Cell-43</font></td>
-													<td width="20%"> <font color="green">Cell-44</font></td>
-													<td width="20%"> <font color="green">Cell-45</font></td>
-											
-											</tr>
-											
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-51</font></td>
-													<td width="20%"> <font color="green">Cell-52</font></td>
-													<td width="20%"> <font color="green">Cell-53</font></td>
-													<td width="20%"> <font color="green">Cell-54</font></td>
-													<td width="20%"> <font color="green">Cell-55</font></td>
-											
-											</tr>
-											
-											
-											<tr>
-													<td width="20%"> <font color="green">Cell-61</font></td>
-													<td width="20%"> <font color="green">Cell-62</font></td>
-													<td width="20%"> <font color="green">Cell-63</font></td>
-													<td width="20%"> <font color="green">Cell-64</font></td>
-													<td width="20%"> <font color="green">Cell-65</font></td>
-											
-											</tr>
-
-											</table>
-											
-										</div>
+									<div id="T-1" class="panel-body" style="overflow:auto">
+										
 										
 									</div>
 								</div>
@@ -462,7 +315,7 @@
 									<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
 								</div>
 								<div class="panel-body">
-									Graph
+									<div id="container" ></div>
 								</div>
 							</div>
 							</div>
@@ -533,7 +386,8 @@
 	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src = "javascripts/bootstrap.js"></script>
 	<script	src = "javascripts/index.js"></script>
-	<script src="http://d3js.org/d3.v3.js"></script>
+	<script	src = "javascripts/highcharts.js"></script>
+	
 		
 	
 </html>
