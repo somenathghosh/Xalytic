@@ -21,9 +21,7 @@ exports.index = function(req, res){
 
 
 exports.getTopic = function(req, res){	  
-	
-	
-	
+
 	res.send({Topic:Topics.topic,Trend: Trend.trend});
 };
 
@@ -45,3 +43,14 @@ exports.getSpecTopic = function(req, res){
 	
 	
 };
+
+exports.getKeyWord = function(req, res){	  
+	
+	res.send({});
+	
+	
+};
+
+
+
+
