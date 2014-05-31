@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Xalytic</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href = "stylesheets/bootstrap.min.css" rel = "stylesheet">
+		<link href = "stylesheets/font-awesome.min.css" rel = "stylesheet">
+		
+		
+		<style type="text/css">
+			body {
+				background-color: #FEFEFF;
+				padding-bottom: 110px;
+			}
+			
+			
+			
+			.clickable
+			{
+				cursor: pointer;
+			}
+
+			.clickable .glyphicon
+			{
+				background: rgba(0, 0, 0, 0.15);
+				display: inline-block;
+				padding: 6px 12px;
+				border-radius: 4px
+			}
+
+			.panel-heading span
+			{
+				margin-top: -23px;
+				font-size: 15px;
+				margin-right: -9px;
+			}
+			a.clickable { color: inherit; }
+			a.clickable:hover { text-decoration:none; }
+			
+			
+			.axis path,
+			.axis line {
+			  fill: none;
+			  stroke: #000;
+			  shape-rendering: crispEdges;
+			}
+
+			
+
+			.line {
+			  fill: none;
+			  stroke: steelblue;
+			  stroke-width: 1.5px;
+			}
+
+			.overlay {
+			  fill: none;
+			  pointer-events: all;
+			}
+
+			.focus circle {
+			  fill: none;
+			  stroke: steelblue;
+			}
+			
+			.cent {
+			  position:absolute;
+			  top:50%;
+			  margin-top:200px; /* this is half the height of your div*/  
+			 
+			}
+
+			
+		</style>
+		
+		
+	</head>
+	<body>
+	
+		<div class = "navbar navbar-inverse navbar-static-top">
+			<div class = "container">
+				
+				<a href = "#" class = "navbar-brand"><font face="trebuchet MS" size="5" color="white"><span class="fa fa-codepen"></span>Xalytic</font></a>
+				
+				<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+				</button>
+				
+				<div class = "collapse navbar-collapse navHeaderCollapse">
+					
+					<form class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+						  <input type="text" id="keyword" class="form-control" placeholder="Search">
+						</div>
+						<button type="submit" id="SubmitButton" class="btn btn-default">Submit</button>
+					</form>
+					
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+						<li><a href="#about" data-toggle="tab">API</a></li>
+					</ul>
+				
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="tab-content">
+			<div class="tab-pane fade in active" id="home">
+
+				<div class="container">
+						
+					<div id ="Start" class="row">
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										<button type="button" id="topic-1" value="1" class="btn btn-default btn-md topicSelect" >Topic-1</button>
+									</h3>
+									
+									<span class="pull-right panel-collapsed clickable "><i class="glyphicon glyphicon-minus"></i></span>
+								</div>
+								<div id="Topic-1" class="panel-body" style="overflow:auto">
+									
+									
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<div class="panel panel-success">
+									<div class="panel-heading ">
+										<h3 class="panel-title">
+											Trend</h3>
+										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+									</div>
+									<div class="panel-body">
+										<div id="containerFrontPage" ></div>
+									</div>
+							</div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+			</div>
+		
+			<div class="tab-pane fade" id="about">
+				<div class="col-lg-9 col-md-9 col-sm-9 ">
+					
+				
+					
+				</div>
+			
+			</div>
+		
+		</div>
+		
+		<div class = "navbar navbar-inverse navbar-fixed-bottom">
+		
+			<div class = "container-fluid">
+				<p class = "navbar-text pull-left">&copy;This work is licensed under
+					<a href="http://www.tcs.com/Pages/default.aspx">Tata Consultancy Services </a></p>
+					
+							
+			</div>
+		
+		</div>
+		
+		
+		
+		
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<form id="setNick1" class="form-horizontal" action="/feedback" method="POST">
+						<div class="modal-header">
+							<h4>Key Word</h4>
+						</div>
+						<div id="thank"></div>
+						<div class="modal-body" >                    
+							<div id="keyWordSearch" ></div>
+						</div>
+						<div class="modal-footer">
+							<a class="btn btn-default" data-dismiss="modal" id="btnClose">Close</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+	
+		
+
+	</body>
+	
+	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src = "javascripts/bootstrap.js"></script>
+	<script	src = "javascripts/index.js"></script>
+	<script	src = "javascripts/highcharts.js"></script>
+	
+		
+	
+</html>

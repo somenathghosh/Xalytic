@@ -5,74 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href = "stylesheets/bootstrap.min.css" rel = "stylesheet">
 		<link href = "stylesheets/font-awesome.min.css" rel = "stylesheet">
-		
-		
-		<style type="text/css">
-			body {
-				background-color: #FEFEFF;
-				padding-bottom: 110px;
-			}
-			
-			
-			
-			.clickable
-			{
-				cursor: pointer;
-			}
 
-			.clickable .glyphicon
-			{
-				background: rgba(0, 0, 0, 0.15);
-				display: inline-block;
-				padding: 6px 12px;
-				border-radius: 4px
-			}
-
-			.panel-heading span
-			{
-				margin-top: -23px;
-				font-size: 15px;
-				margin-right: -9px;
-			}
-			a.clickable { color: inherit; }
-			a.clickable:hover { text-decoration:none; }
-			
-			
-			.axis path,
-			.axis line {
-			  fill: none;
-			  stroke: #000;
-			  shape-rendering: crispEdges;
-			}
-
-			
-
-			.line {
-			  fill: none;
-			  stroke: steelblue;
-			  stroke-width: 1.5px;
-			}
-
-			.overlay {
-			  fill: none;
-			  pointer-events: all;
-			}
-
-			.focus circle {
-			  fill: none;
-			  stroke: steelblue;
-			}
-			
-			.cent {
-			  position:absolute;
-			  top:50%;
-			  margin-top:200px; /* this is half the height of your div*/  
-			 
-			}
-
-			
-		</style>
-		
 		
 	</head>
 	<body>
@@ -81,7 +14,6 @@
 			<div class = "container">
 				
 				<a href = "#" class = "navbar-brand"><font face="trebuchet MS" size="5" color="white"><span class="fa fa-codepen"></span>Xalytic</font></a>
-				
 				<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
 					<span class = "icon-bar"></span>
 					<span class = "icon-bar"></span>
@@ -90,20 +22,12 @@
 				
 				<div class = "collapse navbar-collapse navHeaderCollapse">
 					
-					<form class="navbar-form navbar-right" role="search">
-						<div class="form-group">
-						  <input type="text" id="keyword" class="form-control" placeholder="Search">
-						</div>
-						<button type="submit" id="SubmitButton" class="btn btn-default">Submit</button>
-					</form>
-					
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-						<li><a href="#about" data-toggle="tab">API</a></li>
+						
 					</ul>
 				
 				</div>
-				
 			</div>
 		</div>
 		
@@ -112,259 +36,34 @@
 
 				<div class="container">
 						
-						<div id ="Start" class="row visible">
-							<div  class="col-lg-8 col-md-8 col-sm-8 col-md-offset-2 "> 
-								
-								<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											About this Project
-										</h3>
-										
-										<span class="pull-right"><button id="Run" class="btn btn-default" type="button"> RUN </button></span>
-									</div>
-									<div class="panel-body" style="height:400px;overflow:auto">
-										
-										
-									</div>
-								</div>
-							</div>
+					<div class="row">
+						
+						<div class="col-sm-6 col-md-6"  >
+							<center>
+								<a href="/getTopicTwitter">
+								  <img src="images/twitter-icon.png" alt="Twitter" width="300" height="300">
+								</a> 
+							</center>
 						</div>
 						
-						
-						<div id="TopicPanel" class="row hidden">
-						
-							<div class="col-lg-12 col-md-12 col-sm-12 ">
-								<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											Trend</h3>
-										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div class="panel-body">
-										<div id="containerFrontPage" ></div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="panel panel-success">
-									<div class="panel-heading">
-										<h3 class="panel-title">
-											<button type="button" id="topic-1" value="1" class="btn btn-default btn-md topicSelect" >Topic-1</button>
-										</h3>
-										
-										<span class="pull-right panel-collapsed clickable "><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div id="Topic-1" class="panel-body" style="overflow:auto">
-										
-										
-									</div>
-								</div>
-							</div>
-							
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											<button type="button" id="topic-2" value="2" class="btn btn-default btn-md topicSelect" >Topic-2</button>
-											
-										</h3>
-										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div id="Topic-2" class="panel-body" style="overflow:auto">
-										
-									</div>
-								
-								</div>
-							</div>
-							
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											Topic-3</h3>
-										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div id="Topic-3" class="panel-body">
-										
-										
-									</div>
-								</div>
-							</div>
-							
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											Topic-4</h3>
-										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div id="Topic-4" class="panel-body">
-										
-									</div>
-								</div>
-							</div>
-							
-							
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											Topic-5</h3>
-										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div id="Topic-5" class="panel-body">
-										 
-									</div>
-								</div>
-							</div>
-							
-							
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											Topic-6</h3>
-										<span class="pull-right clickable "><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div id="Topic-6" class="panel-body">
-										 
-									</div>
-								</div>
-							</div>
-							
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											Topic-7</h3>
-										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div id="Topic-7" class="panel-body">
-										 
-									</div>
-								</div>
-							</div>
-							
-							
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											Topic-8</h3>
-										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div id="Topic-8" class="panel-body">
-										 
-									</div>
-								</div>
-							</div>
-							
-							
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											Topic-9</h3>
-										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div id="Topic-9" class="panel-body">
-										 
-									</div>
-								</div>
-							</div>
-							
-							
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											Topic-10</h3>
-										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div id="Topic-10" class="panel-body">
-										 
-									</div>
-								</div>
-							</div>
-
+						<div class="col-sm-6 col-md-6" >
+							<center>
+								<a href="/getTopicFile">
+								  <img src="images/folder-blue.png" alt="File" width="300" height="300">
+								</a>  
+							</center>
 						</div>
 						
-						<div id="GraphPanel" class="row hidden">
-							<!--<button type="button" class="btn btn-default btn-md back" >Back</button> -->
-							<div class="col-lg-4 col-md-4 col-sm-4">
-								<div class="panel panel-success">
-									<div id="PanelHeading" class="panel-heading">
-										
-										
-										
-									</div>
-									<div id="T" class="panel-body" style="overflow:auto">
-										
-										
-									</div>
-								</div>
-							</div>
-						
-							<div id="Graph" class="col-lg-8 col-md-8 col-sm-8 ">
-							<div class="panel panel-success">
-								<div class="panel-heading ">
-									<h3 class="panel-title">
-										Daily Trend</h3>
-									<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-								</div>
-								<div class="panel-body" style="overflow:auto" >
-									<div id="container" ></div>
-								</div>
-							</div>
-							</div>
-						
-						
+						<div class="col-sm-12 col-md-12" >
+							<center>
+								<font face="trebuchet MS" size="10" color="Black"><span class="fa fa-codepen"></span>Xalytic</font>
+							</center>
 						</div>
-					
-				</div>
-			</div>
-		
-			<div class="tab-pane fade" id="about">
-				<div class="col-lg-9 col-md-9 col-sm-9 ">
-					
-				
-					<div class="panel-group" id="accordion">
-						  <div class="panel panel-default">
-							<div class="panel-heading">
-							  <h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-								  Ken C
-								</a>
-							  </h4>
-							</div>
-							<div id="collapseOne" class="panel-collapse collapse">
-							  <div class="panel-body">
-								Reachable via : 
-							  </div>
-							</div>
-						  </div>
-						  <div class="panel panel-default">
-							<div class="panel-heading">
-							  <h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-								  Somenath Ghosh
-								</a>
-							  </h4>
-							</div>
-							<div id="collapseTwo" class="panel-collapse collapse">
-							  <div class="panel-body">
-								Reachable via : somenath.ghosh@tcs.com   or  somenath.ghosh@bankofamerica.com
-							  </div>
-							</div>
-						  </div>
-					  
+						
 					</div>
+					
 				</div>
-			
 			</div>
-		
 		</div>
 		
 		<div class = "navbar navbar-inverse navbar-fixed-bottom">
@@ -377,39 +76,12 @@
 			</div>
 		
 		</div>
-		
-		
-		
-		
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<form id="setNick1" class="form-horizontal" action="/feedback" method="POST">
-						<div class="modal-header">
-							<h4>Key Word</h4>
-						</div>
-						<div id="thank"></div>
-						<div class="modal-body" >                    
-							<div id="keyWordSearch" ></div>
-						</div>
-						<div class="modal-footer">
-							<a class="btn btn-default" data-dismiss="modal" id="btnClose">Close</a>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		
-	
-		
+
 
 	</body>
 	
 	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src = "javascripts/bootstrap.js"></script>
-	<script	src = "javascripts/index.js"></script>
-	<script	src = "javascripts/highcharts.js"></script>
 	
-		
-	
+
 </html>
