@@ -211,7 +211,7 @@ $(function () {
 		data.keyword = $('#keyword').val();
 		var cat = ['T-1','T-2','T-3','T-4','T-5','T-6','T-7','T-8','T-9','T-10'];
 		cat.push($('#keyword').val());
-		
+		console.log(cat);
 		var ser = [{
 						name: $('#keyword').val() ,
 						data: [20,30,10, 50,60,20, 70,50,10, 30]
@@ -224,16 +224,15 @@ $(function () {
 			contentType: 'application/json',
 			url: '/getKeyword',						
 			success: function(data) {
-				
+				console.log(data.data);
 				$('#keyWordSearch').highcharts({
 					
 					chart: {
 						type: 'column'
 					},
-					colors: ['#7cb5ec', '#434348', '#90ed7d', '#f7a35c', '#8085e9', 
-								'#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'],
+					
 					title: {
-						text: 'Probability of Relation'
+						text: 'Weightage of <strong>' + $('#keyword').val() + '</strong> in Topics'
 					},
 					
 					xAxis: {
@@ -242,13 +241,13 @@ $(function () {
 					yAxis: {
 						min: 0,
 						title: {
-							text: 'P(x)'
+							text: 'Weightage'
 						}
 					},
 					tooltip: {
 						headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
 						pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-							'<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+							'<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
 						footerFormat: '</table>',
 						shared: true,
 						useHTML: true
@@ -259,10 +258,10 @@ $(function () {
 							borderWidth: 0
 						}
 					},
-					series: ser
+					series: data.data
         
 				});
-				$('#ModalHeader').html('<h4> Searched Keyword: '+$('#keyword').val()+'</h4>');
+				$('#ModalHeader').html('<h4> The Searched term : <strong>'+$('#keyword').val()+'</strong></h4>');
 				$('#myModal').modal({show:true,backdrop:false});
 				$("#myModal").draggable({
 					handle: ".modal-header"

@@ -108,8 +108,20 @@ exports.getSpecTopic = function(req, res){
 
 exports.getKeyWord = function(req, res){	  
 	
-	res.send({});
-	
+	var term = req.body.keyword;
+	unirest.get("http://tm-server.herokuapp.com/?q=explore&term="+term)
+	.headers({ 
+		"X-tm-Authorization": "MToQ3BiYcWw9TN73TNofXogwkzvnJbf4"
+	 })
+	.end(function (response) {
+		console.log(response.raw_body);
+		var ser = [];
+		var data = {};
+		data.name = term;
+		data.data = (JSON.parse(response.raw_body)).weights;
+		ser.push(data);
+		res.send({data:ser});
+	});
 	
 };
 
