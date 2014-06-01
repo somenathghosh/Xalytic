@@ -63,7 +63,12 @@
 			  stroke: steelblue;
 			}
 			
-			
+			.cent {
+			  position:absolute;
+			  top:50%;
+			  margin-top:200px; /* this is half the height of your div*/  
+			 
+			}
 
 			
 		</style>
@@ -93,8 +98,8 @@
 					</form>
 					
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="/" >Home</a></li>
-						
+						<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+						<li><a href="#about" data-toggle="tab">API</a></li>
 					</ul>
 				
 				</div>
@@ -103,48 +108,28 @@
 		</div>
 		
 		<div class="tab-content">
-			
+			<div class="tab-pane fade in active" id="home">
 
 				<div class="container">
 						
 					<div id ="Start" class="row">
-						<div class="col-lg-4 col-md-4 col-sm-4">
-							<div class="panel panel-success">
-								<div id='TopicHeading' class="panel-heading">
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
 									<h3 class="panel-title">
-										<a href='#'>Topics</a>
+										<button type="button" id="topic-1" value="1" class="btn btn-default btn-md topicSelect" >Topic-1</button>
 									</h3>
-									<!---<button id='genTrend' class ='btn btn-success pull-right'>GenTren</button>-->
+									
 									<span class="pull-right panel-collapsed clickable "><i class="glyphicon glyphicon-minus"></i></span>
 								</div>
-								<div id="Topic" class="panel-body" style="overflow:auto">
-									<div class="table-responsive">
-									<table class="table table-hover ">
-									<% if(Topic !== undefined) {%>
-										<% for(var i=0; i< Topic.length ;i++) { %>
-											<% var str = new String(); %>
-											<% var space = "  "; %>
-											<% for(var j=0; j<Topic[i].length ; j++) { %>
-												<% str = str + space + Topic[i][j] ; %>
-											<%}%>
-											
-											<tr>
-												<td><%=i+1%></td>
-												<td><a href='#'><%=str %></a></td>
-											
-											</tr>
-											<% str = new String(); %>
-										<%}%>
-									<% } %>
-									</table>
-									</div>
+								<div id="Topic-1" class="panel-body" style="overflow:auto">
 									
-
+									
 								</div>
 							</div>
 						</div>
 						
-						<div class="col-lg-8 col-md-8 col-sm-8">
+						<div class="col-lg-6 col-md-6 col-sm-6">
 							<div class="panel panel-success">
 									<div class="panel-heading ">
 										<h3 class="panel-title">
@@ -157,30 +142,22 @@
 							</div>
 						</div>
 						
-						<div class="col-lg-8 col-md-8 col-sm-8 col-md-offset-4">
-							<div class="panel panel-success">
-									<div class="panel-heading ">
-										<h3 class="panel-title">
-											Correlation</h3>
-										<span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-									</div>
-									<div class="panel-body">
-										
-										<div id="containerHeatMap" >
-											<center><button id="genHeatMap" class="btn btn-success">Show Correlation</button></center>
-										
-										</div>
-									</div>
-							</div>
-						</div>
-						
 						
 					</div>
 					
 				</div>
 			</div>
 		
-	
+			<div class="tab-pane fade" id="about">
+				<div class="col-lg-9 col-md-9 col-sm-9 ">
+					
+				
+					
+				</div>
+			
+			</div>
+		
+		</div>
 		
 		<div class = "navbar navbar-inverse navbar-fixed-bottom">
 		
@@ -200,8 +177,8 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<form id="setNick1" class="form-horizontal" action="/feedback" method="POST">
-						<div id='ModalHeader' class="modal-header">
-							
+						<div class="modal-header">
+							<h4>Key Word</h4>
 						</div>
 						<div id="thank"></div>
 						<div class="modal-body" >                    
@@ -222,11 +199,9 @@
 	
 	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src = "javascripts/bootstrap.js"></script>
-	<script	src = "javascripts/PageFile.js"></script>
+	<script	src = "javascripts/index.js"></script>
 	<script	src = "javascripts/highcharts.js"></script>
-	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">	
-	<script src="http://code.highcharts.com/modules/heatmap.js"></script>
-	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+	
+		
 	
 </html>
