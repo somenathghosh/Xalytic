@@ -76,8 +76,15 @@ exports.PageFile = function(req, res){
 };
 
 exports.PageTwitter = function(req, res){
-	
-	res.render('PageTwitter',{Topic:Topics.topic,Trend: Trend.trend});
+
+	unirest.get("http://tm-server.herokuapp.com/?q=topic&dsinit=twitter&thandle=BofA_help")
+	.headers({ 
+		"X-tm-Authorization": "MToQ3BiYcWw9TN73TNofXogwkzvnJbf4"
+	 })
+	.end(function (response) {
+		Topics = JSON.parse(response.raw_body);
+		res.render('PageTwitter',{Topic:Topics.topic});
+	});
 };
 
 
